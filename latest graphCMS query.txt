@@ -1,0 +1,17 @@
+query MyQuery {
+  products(locales: en) {
+    id
+    name
+    price
+    slug
+    description {
+      text
+    }
+    image {
+      url
+    }
+    category {
+      name
+    }
+  }
+}

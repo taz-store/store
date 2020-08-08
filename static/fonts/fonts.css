@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Circular-Black';
+    src: url("Circular/CircularStd-Black.otf");
+  }
+@font-face {
+    font-family: 'Circular-Black-Italic';
+    src: url("Circular/CircularStd-BlackItalic.otf");
+  }
+@font-face {
+    font-family: 'Circular-Bold-Italic';
+    src: url("Circular/CircularStd-BoldItalic.otf");
+  }
+@font-face {
+    font-family: 'Circular-Book';
+    src: url("Circular/CircularStd-Book.otf");
+  }
+@font-face {
+    font-family: 'Circular-Book-Italic';
+    src: url("Circular/CircularStd-BookItalic.otf");
+  }
+@font-face {
+    font-family: 'Circular-Bold';
+    src: url("Circular/CircularStd-Bold.otf");
+  }
+@font-face {
+    font-family: 'Circular-Medium';
+    src: url("Circular/CircularStd-Medium.otf");
+  }
+@font-face {
+    font-family: 'Circular-Medium-Italic';
+    src: url("Circular/CircularStd-MediumItalic.otf");
+  }
