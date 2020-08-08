@@ -288,6 +288,7 @@ module.exports = {
     }),
     inset: {
       '0': '0',
+      '50': '50%',
       auto: 'auto',
     },
     letterSpacing: {
@@ -671,7 +672,7 @@ module.exports = {
     alignSelf: ['responsive'],
     appearance: ['responsive'],
     backgroundAttachment: ['responsive'],
-    backgroundColor: ['responsive', 'hover', 'focus'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'odd', 'even',],
     backgroundOpacity: ['responsive', 'hover', 'focus'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],

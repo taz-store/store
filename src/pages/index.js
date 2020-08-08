@@ -85,6 +85,7 @@ function IndexPage({data}) {
 
       <section id="products" className='mt-20 text-custom-offWhite'>
       <h2 className='pb-20 text-center' style={heading}>OUR PRODUCTS</h2>
+      <div id="productCardContainer" className='flex flex-col productCardContainer '>
       {[
             {
               heading: `Clothing`,
@@ -102,11 +103,11 @@ function IndexPage({data}) {
               route: `About`,
             },
           ].map((card) => (
-            <div className='relative px-6 py-10 mt-16 cardContainer' key={card.route}>
-              <div style={productimg} className='absolute top-0 inline'>
-                <img className='flex w-48 h-48 mx-auto -mt-16 rounded-2xl' src="https://source.unsplash.com/random" alt="" />
-                </div>
-              <div id='cardText' className='flex flex-col justify-between px-10 pt-32 pb-10 bg-gray-600 rounded-2xl min-h-lg'>
+            <div className='relative px-6 py-10 mx-auto mt-16 cardContainer md:max-w-3xl' key={card.route}>
+              <div id='imageWrapper' style={productimg} className='absolute top-0 inline md:flex md:flex-col md:justify-center md:top-auto md:min-h-sm'>
+                <img id='cardImage' className='flex w-48 h-48 mx-auto -mt-16 md:m-0 md:w-56 md:h-56 md:-ml-16 rounded-2xl md:mx-0' src="https://source.unsplash.com/random" alt="" />
+              </div>
+              <div id='cardText' className='flex flex-col justify-between px-10 pt-32 pb-10 bg-gray-600 rounded-2xl min-h-lg md:min-h-sm md:justify-center md:pt-0 md:pl-56'>
                 <span className='block'>
                   <h2 style={heading} className=''>{card.heading}</h2>
                   <p className='mb-5 text-lg'>{card.description}</p>
@@ -117,6 +118,7 @@ function IndexPage({data}) {
               </div>
             </div>
           ))}
+        </div>
       </section>
 
       <section id="Contact" className="flex flex-row justify-center pt-10 mb-24 text-custom-offWhite ">
@@ -124,7 +126,7 @@ function IndexPage({data}) {
         <h1 style={heading} className="mb-2 text-2xl font-bold text-center md:text-3xl">
           Contact Us
         </h1>
-        <p className="font-bold text-center text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et accusamus culpa facilis! Dolorum magnam dignissimos obcaecati corrupti rerum delectus recusandae.</p>
+        <p className="font-bold text-center text-gray-200"> lorem25 Lorem ipsum dolor sit amet consectetur adipisicing elit. Et accusamus culpa facilis! Dolorum magnam dignissimos obcaecati corrupti rerum delectus recusandae.</p>
         <Link to='/contact' className="px-6 mx-auto mt-12 btn">
               Say Hello
             </Link>

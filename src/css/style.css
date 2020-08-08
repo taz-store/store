@@ -21,6 +21,14 @@ h1 {
   .btn:focus{ @apply outline-none; }
   .btn:hover{ @apply bg-indigo-600; }
 
+  
+  @media only screen and (min-width: 768px) {
+    
+    .cardContainer:nth-child(even) #imageWrapper{ align-items: flex-end;}
+    .cardContainer:nth-child(even) #cardText{padding-left: 2.5rem; padding-right: 14rem;}
+    .cardContainer:nth-child(even) #cardImage{margin-left: 0rem; margin-right: -4rem;}
+  }
+  
 
 
 @tailwind components;
