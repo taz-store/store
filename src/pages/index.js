@@ -126,7 +126,7 @@ function IndexPage({data}) {
         <h1 style={heading} className="mb-2 text-2xl font-bold text-center md:text-3xl">
           Contact Us
         </h1>
-        <p className="font-bold text-center text-gray-200"> lorem25 Lorem ipsum dolor sit amet consectetur adipisicing elit. Et accusamus culpa facilis! Dolorum magnam dignissimos obcaecati corrupti rerum delectus recusandae.</p>
+        <p className="inline-block mx-auto font-bold text-center text-gray-200 lg:w-1/3"> lorem25 Lorem ipsum dolor sit amet consectetur adipisicing elit. Et accusamus culpa facilis! Dolorum magnam dignissimos obcaecati corrupti rerum delectus recusandae.</p>
         <Link to='/contact' className="px-6 mx-auto mt-12 btn">
               Say Hello
             </Link>
