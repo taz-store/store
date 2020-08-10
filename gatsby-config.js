@@ -11,8 +11,8 @@ module.exports = {
   siteMetadata: {
     title: `Taz Store`,
     description: `Suppliers of Clothing, Art & Hair extensions`,
-    url: "https://goosebumps.co.zw",
-    image: `src/images/orange.jpg`,
+    url: "https://tazstore.co.zw",
+    image: `/img/orange.jpg`,
     author: `@txndai`,
   },
   plugins: [

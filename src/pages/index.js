@@ -2,9 +2,9 @@ import React from "react";
 import {  Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import HomeLayout from "../components/HomeLayout";
-import SEO from "../components/seo";
+// import SEO from "../components/seo";
 import Hero from "../images/heroVector.svg";
-import seoImage from '../../static/img/orange.jpg'
+// import seoImage from '../../static/img/orange.jpg'
 
 
 function IndexPage({data}) {
@@ -27,13 +27,13 @@ function IndexPage({data}) {
   return (
     <HomeLayout className='overflow-x-hidden'>
       
-      <SEO
+      {/* <SEO
         keywords={[`freelance`,`music`,`gatsby`, `tailwind`, `react`, `tailwindcss`]}
         title="Home"
         image={seoImage}
         url='https://goosebumps.co.zw/'
         pathname=""
-      />
+      /> */}
 
       <section className="min-h-screen text-center md:flex md:flex-row md:justify-center text-custom-offWhite">
         <div 

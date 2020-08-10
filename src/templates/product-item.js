@@ -66,10 +66,12 @@ export const pageQuery = graphql`
         description {
           text
         }
+        
         image {
           url
         }
         price
+        sizes
       }
     }
   }
