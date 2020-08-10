@@ -3,7 +3,7 @@
 .cache
 node_modules
 yarn-error.log
-.env.development
+.env
 
 # Build directory
 /public
