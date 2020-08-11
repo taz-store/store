@@ -29,7 +29,7 @@
     "gatsby",
     "tailwind",
     "tailwindcss",
-    "purgecss"
+    "store",
   ],
   "license": "MIT",
   "scripts": {
@@ -62,9 +62,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/taylorbryant/gatsby-starter-tailwind"
+    "url": "https://github.com/txndai/taz-store-goosebumps"
   },
   "bugs": {
-    "url": "https://github.com/taylorbryant/gatsby-starter-tailwind/issues"
+    "url": "https://github.com/txndai/taz-store-goosebumps/issues"
   }
 }
