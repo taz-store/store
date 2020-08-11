@@ -29,7 +29,7 @@
     "gatsby",
     "tailwind",
     "tailwindcss",
-    "store",
+    "store"
   ],
   "license": "MIT",
   "scripts": {
