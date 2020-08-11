@@ -43,8 +43,8 @@ const products = () => {
         </Link>
         <div className="mt-4">
           <h3 className="mb-1 text-xs tracking-widest text-gray-500 title-font">{product.category.name}</h3>
-          <h2 className="text-lg font-medium text-gray-900 title-font">{product.name}</h2>
-          <p className='mt-1'>
+          <h2 className="text-lg font-medium text-custom-offWhite title-font">{product.name}</h2>
+          <p className='mt-1 text-gray-400'>
             {new Intl.NumberFormat('en-US', {
                 style: 'currency',
                 currency: 'USD',

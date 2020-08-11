@@ -9,7 +9,7 @@ const about = () => {
   <div className="container flex flex-col px-5 py-24 mx-auto">
     <div className="mx-auto">
       <div className="h-64 overflow-hidden rounded-lg">
-        <img alt="content" className="object-cover object-center w-full h-full" src="https://dummyimage.com/1200x500"/>
+        <img alt="content" className="object-cover object-center w-full h-full" src="https://source.unsplash.com/random"/>
       </div>
       <div className="flex flex-col mt-10 sm:flex-row">
         <div className="text-center sm:w-1/3 sm:pr-8 sm:py-8">
@@ -20,8 +20,8 @@ const about = () => {
             </svg>
           </div>
           <div className="flex flex-col items-center justify-center text-center">
-            <h2 className="mt-4 text-lg font-medium text-gray-900 title-font">Phoebe Caulfield</h2>
-            <div className="w-12 h-1 mt-2 mb-4 bg-indigo-500 rounded"></div>
+            <h2 className="mt-4 text-lg font-medium text-gray-200 title-font ">Phoebe Caulfield</h2>
+            <div className="w-12 h-1 mt-2 mb-4 rounded bg-custom-accentBlue"></div>
             <p className="text-base text-gray-600">Raclette knausgaard hella meggs normcore williamsburg enamel pin sartorial venmo tbh hot chicken gentrify portland.</p>
           </div>
         </div>
