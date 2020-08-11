@@ -4,11 +4,10 @@ import { graphql } from 'gatsby';
 import Layout from "../components/layout";
 
 
-const ProductPage = ({
-  data: {
-    gcms: { product },
-  },
-}) => (
+function ProductPage({data: { gcms: { product },},}) {
+console.log(product.name)
+  
+  return(
   <Layout>
   <section className="overflow-hidden text-gray-500 shadow-xl body-font">
   <div className="container px-5 py-24 mx-auto">
@@ -56,9 +55,10 @@ const ProductPage = ({
   <form name="ProductItem" data-netlify="true" method='POST' data-netlify-honeypot="bot-field"  className="flex flex-col w-full mt-8 md:ml-auto md:py-8 md:mt-0">
       <input type="hidden" name="bot-field" />
       <input type="hidden" name="form-name" value="ProductItem" />
+      <input type="hidden" name="product-name" value={product.name} />
       <h2 className="mb-1 text-lg font-medium text-white title-font">Place an order</h2>
       <p className="mb-5 leading-relaxed text-gray-600">Please enter your details and we&#39;ll get back to you as soon as possible.</p>
-      <input className="px-4 py-2 mb-4 text-base text-white bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="Name" type="text" name="text"/>
+      <input className="px-4 py-2 mb-4 text-base text-white bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="Name" type="text" name="name"/>
       <input className="px-4 py-2 mb-4 text-base text-white bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="Email" type="email" name="email"/>
       <input className="px-4 py-2 mb-4 text-base text-white bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="Quantity" type="number" name="quantity"/>
       <input className="px-4 py-2 mb-4 text-base text-white bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="Address 1" type="text" name="addressOne"/>
@@ -69,7 +69,9 @@ const ProductPage = ({
   </div>
 </section>
 </Layout>
-);
+  )
+}
+
 
 export const pageQuery = graphql`
   query ProductPageQuery($id: ID!) {
