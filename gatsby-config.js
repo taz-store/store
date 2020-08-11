@@ -49,13 +49,7 @@ module.exports = {
         url: process.env.GRAPHCMS_URL,
       },
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/posts`,
-        name: 'posts'
-      }
-    },
+    
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

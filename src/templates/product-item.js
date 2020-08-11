@@ -10,7 +10,7 @@ const ProductPage = ({
   },
 }) => (
   <Layout>
-  <section className="overflow-hidden text-gray-500 bg-gray-900 body-font">
+  <section className="overflow-hidden text-gray-500 shadow-xl body-font">
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-wrap mx-auto lg:w-4/5">
       <img alt="ecommerce" className="object-cover object-center w-full h-64 rounded lg:w-1/2 lg:h-auto" src={product.image.url}/>
@@ -18,7 +18,7 @@ const ProductPage = ({
         <h2 className="text-sm tracking-widest text-gray-600 title-font">{product.category}</h2>
         <h1 className="mb-1 text-3xl font-medium text-white title-font">{product.name}</h1>
         <p className="leading-relaxed">{product.description.text}</p>
-        <div className="flex items-center pb-5 mt-6 mb-5 border-b-2 border-gray-800">
+        {/* <div className="flex items-center pb-5 mt-6 mb-5 border-b-2 border-gray-800">
           <div className="flex">
             <span className="mr-3">Color</span>
             <button className="w-6 h-6 border-2 border-gray-800 rounded-full focus:outline-none"></button>
@@ -41,18 +41,29 @@ const ProductPage = ({
               </span>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="flex">
           <span className="text-2xl font-medium text-white title-font">{new Intl.NumberFormat('en-US', {
               style: 'currency',
               currency: 'USD',
             }).format(product.price)}
           </span>
-          <button className="w-32 mx-auto btn">Button</button>
-          
         </div>
       </div>
     </div>
+  <div className="flex mx-auto lg:w-4/5">
+  </div>
+  <form className="flex flex-col w-full mt-8 md:ml-auto md:py-8 md:mt-0">
+      <h2 className="mb-1 text-lg font-medium text-white title-font">Place an order</h2>
+      <p className="mb-5 leading-relaxed text-gray-600">Please enter your details and we&#39;ll get back to you as soon as possible.</p>
+      <input className="px-4 py-2 mb-4 text-base text-white bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="Name" type="text"/>
+      <input className="px-4 py-2 mb-4 text-base text-white bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="Email" type="email"/>
+      <input className="px-4 py-2 mb-4 text-base text-white bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="Quantity" type="number"/>
+      <input className="px-4 py-2 mb-4 text-base text-white bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="Address 1" type="text"/>
+      <input className="px-4 py-2 mb-4 text-base text-white bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="Address 2" type="text"/>
+      <button className="mx-auto btn">Button</button>
+      <p className="mt-3 text-xs text-gray-500">Chicharrones blog helvetica normcore iceland tousled brook viral artisan.</p>
+    </form>
   </div>
 </section>
 </Layout>
