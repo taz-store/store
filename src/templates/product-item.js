@@ -2,21 +2,28 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from "../components/layout";
+import Img from '../components/Img'
+
 
 
 function ProductPage({data: { gcms: { product },},}) {
-console.log(product.name)
+console.log(product.image.node.childImageSharp.fluid)
+const sizes = (product.sizes)
+console.log(sizes)
   
   return(
   <Layout>
   <section className="overflow-hidden text-gray-500 shadow-xl body-font">
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-wrap mx-auto lg:w-4/5">
-      <img alt="ecommerce" className="object-cover object-center w-full h-64 rounded lg:w-1/2 lg:h-auto" src={product.image.url}/>
+      <img alt="ecommerce" className="object-cover object-center w-full h-64 rounded lg:w-1/2 lg:h-auto" src={product.image.node.childImageSharp.fluid.src}/>
+      {/* this Gatsby-image component one isn't working yet*/}
+      <Img className='inline-block w-56' fluid={product.image.node.childImageSharp.fluid.src} /> 
       <div className="w-full mt-6 lg:w-1/2 lg:pl-10 lg:py-6 lg:mt-0">
-        <h2 className="text-sm tracking-widest text-gray-600 title-font">{product.category}</h2>
+        <h2 className="text-sm tracking-widest text-gray-600 title-font">{product.category.name}</h2>
         <h1 className="mb-1 text-3xl font-medium text-white title-font">{product.name}</h1>
         <p className="leading-relaxed">{product.description.text}</p>
+        
         {/* <div className="flex items-center pb-5 mt-6 mb-5 border-b-2 border-gray-800">
           <div className="flex">
             <span className="mr-3">Color</span>
@@ -63,7 +70,12 @@ console.log(product.name)
       <input className="px-4 py-2 mb-4 text-base text-white bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="Quantity" type="number" name="quantity"/>
       <input className="px-4 py-2 mb-4 text-base text-white bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="Address 1" type="text" name="addressOne"/>
       <input className="px-4 py-2 mb-4 text-base text-white bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="Address 2" type="text" name="addressTwo"/>
-      <button className="mx-auto btn" type='submit'>Button</button>
+      <select className="px-4 py-2 mb-4 text-base text-white bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" name="size">
+          {sizes.map((size, index) => (
+                <option key={index} value='hello'>{size}</option>
+                ))}
+      </select>
+      <button className="mx-auto btn" type='submit'>Submizzle</button>
       <p className="mt-3 text-xs text-gray-500">Chicharrones blog helvetica normcore iceland tousled brook viral artisan.</p>
     </form>
   </div>
@@ -84,9 +96,19 @@ export const pageQuery = graphql`
         
         image {
           url
+          node {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
         price
         sizes
+        category {
+          name
+        }
       }
     }
   }

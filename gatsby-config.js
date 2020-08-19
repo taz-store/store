@@ -46,7 +46,7 @@ module.exports = {
       options: {
         typeName: `GraphCMS`,
         fieldName: `gcms`,
-        url: `https://api-us-east-1.graphcms.com/v2/ckdjgo87w5bb401yzdfeu3bnd/master`,
+        url: `https://api-us-east-1.graphcms.com/v2/ckdyy61to3dph01xu8k3ghaxw/master`,
       },
     },
     
