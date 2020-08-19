@@ -46,23 +46,23 @@ module.exports = {
       options: {
         typeName: `GraphCMS`,
         fieldName: `gcms`,
-        url: `https://api-us-east-1.graphcms.com/v2/ckdyy61to3dph01xu8k3ghaxw/master`,
+        url: process.env.GRAPHCMS_URL,
       },
     },
     
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Goosebumps Collective`,
-        short_name: `Goosebumps`,
-        start_url: `/`,
-        background_color: fullConfig.theme.colors.white,
-        theme_color: fullConfig.theme.colors.gray["700"],
-        display: `minimal-ui`,
-        icon: `src/images/tazlogo.svg`,
-      },
-    },
-    `gatsby-plugin-offline`,
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `Goosebumps Collective`,
+    //     short_name: `Goosebumps`,
+    //     start_url: `/`,
+    //     background_color: fullConfig.theme.colors.white,
+    //     theme_color: fullConfig.theme.colors.gray["700"],
+    //     display: `minimal-ui`,
+    //     icon: `src/images/tazlogo.svg`,
+    //   },
+    // },
+    // `gatsby-plugin-offline`,
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {

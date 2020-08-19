@@ -1,15 +1,45 @@
 import React from "react";
-import {  Link } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import HomeLayout from "../components/HomeLayout";
 // import SEO from "../components/seo";
 import Hero from "../images/heroVector.svg";
 // import seoImage from '../../static/img/orange.jpg'
 
+const pageQuery = graphql`
+  {
+    gcms {
+      about: sectionHeading(where: {id: "cke1thbps05gw0174wnu2v49l"}) {
+        title
+        description
+      }
+      hero: sectionHeading(where: {id: "cke1v7glk06ac01176idyrkwc"}) {
+        description
+        heading
+      }
+      productCardIndices {
+        description
+        title
+        image {
+          url
+          node {
+            childImageSharp {
+              fluid {
+                src
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
-function IndexPage({data}) {
+function IndexPage() {
+  const { gcms: { about, productCardIndices, hero } } = useStaticQuery(pageQuery);
+  console.log(about)
+  console.log(hero)
   
-  console.log(data)
 
   const heroHeading = {
     fontSize: '6rem',
@@ -44,11 +74,10 @@ function IndexPage({data}) {
               className="mb-4 font-bold leading-none "
               style={heroHeading}
             >
-              Taz<br/>
-              store
+              {hero.heading}
             </h2><br/>
             <p className="pr-4 mb-4 text-xl font-bold">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas reiciendis eum dolor est alias, nostrum eos amet odio inventore expedita.
+              {hero.description}
             </p>
             <Link to='/products' className="hidden w-56 px-6 mt-4 md:flex btn">
               View Products
@@ -72,9 +101,9 @@ function IndexPage({data}) {
         <div className='flex flex-col px-6 py-10 bg-gray-700 md:flex-row rounded-2xl'>
           <img className='inline w-64 max-w-sm p-4 mx-auto md:w-1/3 lg:w-1/2 md:max-w-lg' src={Hero} alt=""/>
           <div id="text" className='inline-block m-auto md:flex md:flex-col md:px-16'>
-            <h2 style={heading}>Who we are</h2>
+            <h2 style={heading} >Who we are</h2>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed voluptates alias officiis nobis veritatis, libero rem. Mollitia, voluptas, quia pariatur unde repudiandae magnam amet labore dignissimos ex eveniet architecto laudantium?
+              {about.description}
             </p>
             <Link to='/about' className="px-6 mx-auto mt-12 mb-6 md:mx-0 btn">
               Read More
@@ -86,7 +115,7 @@ function IndexPage({data}) {
       <section id="products" className='mt-20 text-custom-offWhite'>
       <h2 className='pb-20 text-center' style={heading}>OUR PRODUCTS</h2>
       <div id="productCardContainer" className='flex flex-col productCardContainer '>
-      {[
+      {/* {[
             {
               heading: `Clothing`,
               description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat illum, nam dolor repellat quis cumque quo est recusandae veritatis sequi!`,
@@ -102,17 +131,19 @@ function IndexPage({data}) {
               description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat illum, nam dolor repellat quis cumque quo est recusandae veritatis sequi!`,
               route: `About`,
             },
-          ].map((card) => (
-            <div className='relative px-6 py-10 mx-auto mt-16 cardContainer md:max-w-3xl' key={card.route}>
+          ] */}
+          {
+          productCardIndices.map((card) => (
+            <div className='relative px-6 py-10 mx-auto mt-16 cardContainer md:max-w-3xl' key={card.title}>
               <div id='imageWrapper' style={productimg} className='absolute top-0 inline md:flex md:flex-col md:justify-center md:top-auto md:min-h-sm'>
-                <img id='cardImage' className='flex w-48 h-48 mx-auto -mt-16 md:m-0 md:w-56 md:h-56 md:-ml-16 rounded-2xl md:mx-0' src="https://source.unsplash.com/random" alt="" />
+                <img id='cardImage' className='flex w-48 h-48 mx-auto -mt-16 md:m-0 md:w-56 md:h-56 md:-ml-16 rounded-2xl md:mx-0' src={card.image.node.childImageSharp.fluid.src} alt="" />
               </div>
               <div id='cardText' className='flex flex-col justify-between px-10 pt-32 pb-10 bg-gray-600 rounded-2xl min-h-lg md:min-h-sm md:justify-center md:pt-0 md:pl-56'>
                 <span className='block'>
-                  <h2 style={heading} className=''>{card.heading}</h2>
+                  <h2 style={heading} className=''>{card.title}</h2>
                   <p className='mb-5 text-lg'>{card.description}</p>
                 </span>
-                <Link className='w-5' to={card.route}>
+                <Link className='w-5' to={card.title}>
                     <svg className='inline w-8' fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clipRule="evenodd"></path></svg>
                 </Link>
               </div>
@@ -126,7 +157,7 @@ function IndexPage({data}) {
         <h1 style={heading} className="mb-2 text-2xl font-bold text-center md:text-3xl">
           Contact Us
         </h1>
-        <p className="inline-block mx-auto font-bold text-center text-gray-200 lg:w-1/3"> lorem25 Lorem ipsum dolor sit amet consectetur adipisicing elit. Et accusamus culpa facilis! Dolorum magnam dignissimos obcaecati corrupti rerum delectus recusandae.</p>
+        <p className="inline-block mx-auto font-bold text-center text-gray-200 lg:w-1/3">We&apos;re here to discuss any questions you may have, how can we help?</p>
         <Link to='/contact' className="px-6 mx-auto mt-12 btn">
               Say Hello
             </Link>

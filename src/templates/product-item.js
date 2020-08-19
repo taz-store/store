@@ -7,10 +7,9 @@ import Img from '../components/Img'
 
 
 function ProductPage({data: { gcms: { product },},}) {
-console.log(product.image.node.childImageSharp.fluid)
 const sizes = (product.sizes)
-console.log(sizes)
-  
+// The logic behind conditional rendering for the sizes input on the form. 
+// The component/function is called down by the form
 function SizeInput() {
   if(sizes.length > 0) {
       return (
