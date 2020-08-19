@@ -72,7 +72,7 @@ console.log(sizes)
       <input className="px-4 py-2 mb-4 text-base text-white bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="Address 2" type="text" name="addressTwo"/>
       <select className="px-4 py-2 mb-4 text-base text-white bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" name="size">
           {sizes.map((size, index) => (
-                <option key={index} value='hello'>{size}</option>
+                <option key={index} value={size}>{size}</option>
                 ))}
       </select>
       <button className="mx-auto btn" type='submit'>Submizzle</button>
