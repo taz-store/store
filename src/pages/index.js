@@ -17,6 +17,24 @@ const pageQuery = graphql`
         description
         heading
       }
+      categories {
+        name
+        slug
+        description {
+          text
+        }
+        id
+        image {
+          url
+          node {
+            childImageSharp {
+              fluid(maxWidth: 560) {
+                src
+              }
+            }
+          }
+        }
+      }
       productCardIndices {
         description
         title
@@ -36,9 +54,9 @@ const pageQuery = graphql`
 `;
 
 function IndexPage() {
-  const { gcms: { about, productCardIndices, hero } } = useStaticQuery(pageQuery);
+  const { gcms: { about, categories, hero } } = useStaticQuery(pageQuery);
   console.log(about)
-  console.log(hero)
+  console.log(categories)
   
 
   const heroHeading = {
@@ -53,6 +71,10 @@ function IndexPage() {
     width: 'calc(100% - 2.75rem)',
   }
 
+  const bgImage = {
+    backgroundImage: 'url(https://source.unsplash.com/random)'
+  }
+
   
   return (
     <HomeLayout className='overflow-x-hidden'>
@@ -65,7 +87,7 @@ function IndexPage() {
         pathname=""
       /> */}
 
-      <section className="min-h-screen text-center md:flex md:flex-row md:justify-center text-custom-offWhite">
+      <section className="min-h-screen mb-12 text-center md:flex md:flex-row md:justify-center text-custom-offWhite">
         <div 
           id="heroText" 
           className="flex flex-col p-3 text-left md:w-1/3" 
@@ -97,54 +119,42 @@ function IndexPage() {
           </div>
       </section>
 
-      <section id="about" className='px-6 md:px-20 text-custom-offWhite'>
-        <div className='flex flex-col px-6 py-10 bg-gray-700 md:flex-row rounded-2xl'>
-          <img className='inline w-64 max-w-sm p-4 mx-auto md:w-1/3 lg:w-1/2 md:max-w-lg' src={Hero} alt=""/>
-          <div id="text" className='inline-block m-auto md:flex md:flex-col md:px-16'>
-            <h2 style={heading} >Who we are</h2>
-            <p>
-              {about.description}
-            </p>
-            <Link to='/about' className="px-6 mx-auto mt-12 mb-6 md:mx-0 btn">
-              Read More
-            </Link>
-          </div>
+      <section id="about">
+      {/* <!-- component --> */}
+        <div>
+            <div className=" lg:py-12 lg:flex lg:justify-center">
+                <div className="bg-gray-400 rounded-lg lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg">
+                    <div className="p-4 lg:w-1/2">
+                        <div className="h-64 bg-cover rounded-lg lg:h-full" style={bgImage}></div>
+                    </div>
+                    <div className="max-w-xl px-6 py-12 lg:max-w-5xl lg:w-1/2">
+                        <h2 style={heading} className="text-custom-mainBlue"><span className='text-teal-600'>Who we</span> <span className="text-custom-mainBlue">are</span></h2>
+                        <p className="mt-4 text-gray-800">{about.description}</p>
+                        <div className="mt-8">
+                            <Link to='/about' className="px-5 py-3 font-semibold text-gray-100 bg-teal-500 rounded">About us</Link>
+                        </div>
+                    </div>
+                </div>
+            </div> 
         </div>
       </section>
 
       <section id="products" className='mt-20 text-custom-offWhite'>
       <h2 className='pb-20 text-center' style={heading}>OUR PRODUCTS</h2>
       <div id="productCardContainer" className='flex flex-col productCardContainer '>
-      {/* {[
-            {
-              heading: `Clothing`,
-              description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat illum, nam dolor repellat quis cumque quo est recusandae veritatis sequi!`,
-              route: `Music`,
-            },
-            {
-              heading: `Art`,
-              description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat illum, nam dolor repellat quis cumque quo est recusandae veritatis sequi!`,
-              route: `Web Development`,
-            },
-            {
-              heading: `Hair`,
-              description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat illum, nam dolor repellat quis cumque quo est recusandae veritatis sequi!`,
-              route: `About`,
-            },
-          ] */}
           {
-          productCardIndices.map((card) => (
-            <div className='relative px-6 py-10 mx-auto mt-16 cardContainer md:max-w-3xl' key={card.title}>
+          categories.map((card) => (
+            <div className='relative px-6 py-10 mx-auto mt-16 cardContainer md:max-w-3xl md:min-w-2xl' key={card.name}>
               <div id='imageWrapper' style={productimg} className='absolute top-0 inline md:flex md:flex-col md:justify-center md:top-auto md:min-h-sm'>
-                <img id='cardImage' className='flex w-48 h-48 mx-auto -mt-16 md:m-0 md:w-56 md:h-56 md:-ml-16 rounded-2xl md:mx-0' src={card.image.node.childImageSharp.fluid.src} alt="" />
+                <img id='cardImage' className='flex w-48 h-48 mx-auto -mt-16 shadow-xl md:m-0 md:w-56 md:h-56 md:-ml-16 rounded-2xl md:mx-0' src={card.image.node.childImageSharp.fluid.src} alt="" />
               </div>
-              <div id='cardText' className='flex flex-col justify-between px-10 pt-32 pb-10 bg-gray-600 rounded-2xl min-h-lg md:min-h-sm md:justify-center md:pt-0 md:pl-56'>
+              <div id='cardText' className='flex flex-col justify-between px-10 pt-32 pb-10 bg-gray-400 rounded-xl min-h-lg md:min-h-sm md:justify-center md:pt-12 md:pl-56'>
                 <span className='block'>
-                  <h2 style={heading} className=''>{card.title}</h2>
-                  <p className='mb-5 text-lg'>{card.description}</p>
+                  <h2 style={heading}><span className='text-teal-600'>{card.name}</span></h2>
+                  <p className='mb-5 text-lg text-gray-800'>{card.description.text}</p>
                 </span>
-                <Link className='w-5' to={card.title}>
-                    <svg className='inline w-8' fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clipRule="evenodd"></path></svg>
+                <Link className='z-20 w-8' to={`/products/categories/${card.slug}`}>
+                    <svg className='inline w-8 text-custom-mainBlue' fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clipRule="evenodd"></path></svg>
                 </Link>
               </div>
             </div>

@@ -9,7 +9,7 @@ function HomeLayout({ children }) {
     <div className="flex flex-col min-h-screen px-5 overflow-x-hidden text-gray-900 bg-custom-mainBlue font-circular-black">
       <Header />
 
-      <main className="flex-1 w-full max-w-full py-8 mx-auto md:py-16">
+      <main className="flex-1 w-full max-w-full py-8 mx-auto md:px-12 md:py-16">
         {children}
       </main>
 
@@ -20,7 +20,7 @@ function HomeLayout({ children }) {
           <a href="https://goosebumps.co.zw" className="ml-1 text-purple-400" target="_blank"
             rel="noopener noreferrer">Goosebumps Collective</a>
         </p>
-        <p className='text-sm text-center text-gray-700 sm:text-left'> Powered by:<a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer"><img className='inline-block w-16 h-4 text-sm text-center text-gray-700 transition duration-300 ease-out transform  hover:bg-custom-offWhite hover:scale-105 sm:text-left sm:w-20' src={gatsbylogo} alt="" /></a></p>
+        <p className='text-sm text-center text-gray-700 sm:text-left'> Powered by:<a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer"><img className='inline-block w-16 h-4 text-sm text-center text-gray-700 transition duration-300 ease-out transform hover:bg-custom-offWhite hover:scale-105 sm:text-left sm:w-20' src={gatsbylogo} alt="" /></a></p>
       </div>
       
     </div>

@@ -17,15 +17,15 @@ h1 {
     min-width: 22rem;
   }
 
-  .btn      { @apply flex items-center justify-center w-48 h-16 px-8 py-2 text-lg text-gray-800 border-0 rounded-full bg-custom-accentBlue;}
+  .btn      { @apply flex items-center justify-center w-48 h-16 px-8 py-2 text-lg bg-teal-500 border-0 rounded-full text-custom-offWhite;}
   .btn:focus{ @apply outline-none; }
-  .btn:hover{ @apply bg-indigo-600; }
+  .btn:hover{ @apply bg-teal-600; }
 
   
   @media only screen and (min-width: 768px) {
     
     .cardContainer:nth-child(even) #imageWrapper{ align-items: flex-end;}
-    .cardContainer:nth-child(even) #cardText{padding-left: 2.5rem; padding-right: 14rem;}
+    .cardContainer:nth-child(even) #cardText{padding-left: 3rem; padding-right: 14rem;}
     .cardContainer:nth-child(even) #cardImage{margin-left: 0rem; margin-right: -4rem;}
   }
   
