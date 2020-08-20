@@ -2,13 +2,16 @@
 exports.createPages = async ({ graphql, actions: { createPage } }) => {
     const {
       data: {
-        gcms: { products },
+        gcms: { products, categories },
       },
     } = await graphql(`
       {
         gcms {
           products(stage: PUBLISHED) {
             id
+            slug
+          }
+          categories {
             slug
           }
         }
@@ -24,6 +27,15 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
         },
       })
     );
+
+    categories.forEach(({ slug }) =>
+      createPage({
+        path: `/products/categories/${slug}`,
+        component: require.resolve(`./src/templates/categoryProducts.js`),
+        context: { slug },
+      })
+    );
+
   };
 
   // creating local node of graphcms image, so I can take advantage of gatsby-image
