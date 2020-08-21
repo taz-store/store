@@ -131,7 +131,7 @@ function IndexPage() {
                         <h2 style={heading} className="text-custom-mainBlue"><span className='text-teal-600'>Who we</span> <span className="text-custom-mainBlue">are</span></h2>
                         <p className="mt-4 text-gray-800">{about.description}</p>
                         <div className="mt-8">
-                            <Link to='/about' className="px-5 py-3 font-semibold text-gray-100 bg-teal-500 rounded">About us</Link>
+                            <Link to='/about' className="px-5 py-3 font-semibold text-gray-100 bg-teal-500 rounded ">About us</Link>
                         </div>
                     </div>
                 </div>
