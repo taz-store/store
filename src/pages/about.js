@@ -6,10 +6,10 @@ const about = () => {
     return (
         <Layout>
             <section className="text-gray-700 body-font">
-  <div className="container flex flex-col px-5 py-24 mx-auto">
+  <div className="container flex flex-col px-5 py-24 mx-auto ">
     <div className="mx-auto">
       <div className="h-64 overflow-hidden rounded-lg">
-        <img alt="content" className="object-cover object-center w-full h-full" src="https://source.unsplash.com/random"/>
+        <img alt="content" className="object-cover object-center w-full h-full" src="https://images.unsplash.com/photo-1597916360285-df3e4c5cddd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"/>
       </div>
       <div className="flex flex-col mt-10 sm:flex-row">
         <div className="text-center sm:w-1/3 sm:pr-8 sm:py-8">
@@ -20,13 +20,13 @@ const about = () => {
             </svg>
           </div>
           <div className="flex flex-col items-center justify-center text-center">
-            <h2 className="mt-4 text-lg font-medium text-gray-200 title-font ">Phoebe Caulfield</h2>
-            <div className="w-12 h-1 mt-2 mb-4 rounded bg-custom-accentBlue"></div>
-            <p className="text-base text-gray-600">Raclette knausgaard hella meggs normcore williamsburg enamel pin sartorial venmo tbh hot chicken gentrify portland.</p>
+            <h2 className="mt-4 text-lg font-medium text-gray-200 title-font ">Tanaka Paradzai</h2>
+            <div className="w-12 h-1 mt-2 mb-4 bg-teal-600 rounded"></div>
+            <p className="text-base text-gray-600">Founder</p>
           </div>
         </div>
         <div className="pt-4 mt-4 text-center border-t border-gray-300 sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l sm:border-t-0 sm:mt-0 sm:text-left">
-          <p className="mb-4 text-lg leading-relaxed">Meggings portland fingerstache lyft, post-ironic fixie man bun banh mi umami everyday carry hexagon locavore direct trade art party. Locavore small batch listicle gastropub farm-to-table lumbersexual salvia messenger bag. Coloring book flannel truffaut craft beer drinking vinegar sartorial, disrupt fashion axe normcore meh butcher. Portland 90s scenester vexillologist forage post-ironic asymmetrical, chartreuse disrupt butcher paleo intelligentsia pabst before they sold out four loko. 3 wolf moon brooklyn.</p>
+          <p className="mb-4 text-lg leading-relaxed text-custom-offWhite">Meggings portland fingerstache lyft, post-ironic fixie man bun banh mi umami everyday carry hexagon locavore direct trade art party. Locavore small batch listicle gastropub farm-to-table lumbersexual salvia messenger bag. Coloring book flannel truffaut craft beer drinking vinegar sartorial, disrupt fashion axe normcore meh butcher. Portland 90s scenester vexillologist forage post-ironic asymmetrical, chartreuse disrupt butcher paleo intelligentsia pabst before they sold out four loko. 3 wolf moon brooklyn.</p>
         </div>
       </div>
     </div>
