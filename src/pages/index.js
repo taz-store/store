@@ -5,6 +5,7 @@ import HomeLayout from "../components/HomeLayout";
 // import SEO from "../components/seo";
 import Hero from "../images/heroVector.svg";
 // import seoImage from '../../static/img/orange.jpg'
+import Carousel from '../components/carousel'
 
 const pageQuery = graphql`
   {
@@ -55,9 +56,6 @@ const pageQuery = graphql`
 
 function IndexPage() {
   const { gcms: { about, categories, hero } } = useStaticQuery(pageQuery);
-  console.log(about)
-  console.log(categories)
-  
 
   const heroHeading = {
     fontSize: '6rem',
@@ -71,10 +69,7 @@ function IndexPage() {
     width: 'calc(100% - 2.75rem)',
   }
 
-  const bgImage = {
-    backgroundImage: 'url(https://source.unsplash.com/random)'
-  }
-
+  
   
   return (
     <HomeLayout className='overflow-x-hidden'>
@@ -125,7 +120,7 @@ function IndexPage() {
             <div className=" lg:py-12 lg:flex lg:justify-center">
                 <div className="bg-gray-400 rounded-lg lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg">
                     <div className="p-4 lg:w-1/2">
-                        <div className="h-64 bg-cover rounded-lg lg:h-full" style={bgImage}></div>
+                        <Carousel />
                     </div>
                     <div className="max-w-xl px-6 py-12 lg:max-w-5xl lg:w-1/2">
                         <h2 style={heading} className="text-custom-mainBlue"><span className='text-teal-600'>Who we</span> <span className="text-custom-mainBlue">are</span></h2>
@@ -175,12 +170,15 @@ function IndexPage() {
     </section>
     </HomeLayout>
   );
+
 }
 
 IndexPage.propTypes = {
   data: PropTypes.object,
   key: PropTypes.object,
 };
+
+
 
 export default IndexPage;
 
