@@ -140,11 +140,11 @@ function IndexPage() {
           {
           categories.map((card) => (
             <div className='relative px-6 py-10 mx-auto mt-16 cardContainer md:max-w-3xl md:min-w-2xl' key={card.name}>
-              <div id='imageWrapper' style={productimg} className='absolute top-0 inline md:flex md:flex-col md:justify-center md:top-auto md:min-h-sm'>
+              <div id='imageWrapper' style={productimg} className='absolute top-0 z-0 inline md:flex md:flex-col md:justify-center md:top-auto md:min-h-sm'>
                 <img id='cardImage' className='flex w-48 h-48 mx-auto -mt-16 shadow-xl md:m-0 md:w-56 md:h-56 md:-ml-16 rounded-2xl md:mx-0' src={card.image.node.childImageSharp.fluid.src} alt="" />
               </div>
-              <div id='cardText' className='flex flex-col justify-between px-10 pt-32 pb-10 bg-gray-400 rounded-xl min-h-lg md:min-h-sm md:justify-center md:pt-12 md:pl-56'>
-                <span className='block'>
+              <div id='cardText' className='flex flex-col justify-between px-10 pt-32 pb-10 bg-gray-400 teal-shadow rounded-xl min-h-lg md:min-h-sm md:justify-center md:pt-12 md:pl-56 '>
+                <span className='z-50 block teal-shadow'>
                   <h2 style={heading}><span className='text-teal-600'>{card.name}</span></h2>
                   <p className='mb-5 text-lg text-gray-800'>{card.description.text}</p>
                 </span>

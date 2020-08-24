@@ -60,7 +60,7 @@ function SizeInput() {
       <input className="px-4 py-2 mb-4 text-base text-white bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="Address 1" type="text" name="addressOne"/>
       <input className="px-4 py-2 mb-4 text-base text-white bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="Address 2" type="text" name="addressTwo"/>
       <SizeInput/>
-      <button className="mx-auto btn" type='submit'>Submizzle</button>
+      <button className="mx-auto btn" type='submit'>Submit</button>
       <p className="mt-3 text-xs text-gray-500">Chicharrones blog helvetica normcore iceland tousled brook viral artisan.</p>
     </form>
   </div>
