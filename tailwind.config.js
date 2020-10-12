@@ -2,7 +2,7 @@ module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
   },
-  purge: [],
+  purge: ["./src/**/*.js"],
   target: 'relaxed',
   prefix: '',
   important: false,
