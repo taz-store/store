@@ -11,8 +11,8 @@ module.exports = {
   siteMetadata: {
     title: `Taz Store`,
     description: `Suppliers of Clothing, Art & Hair extensions`,
-    url: "https://tazstore.co.zw",
-    image: `/img/orange.jpg`,
+    url: "https://tazstore.netlify.app",
+    image: "/images/taz.png",
     author: `@txndai`,
   },
   plugins: [

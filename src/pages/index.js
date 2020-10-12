@@ -3,6 +3,7 @@ import { graphql, useStaticQuery, Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import HomeLayout from "../components/HomeLayout";
 import Carousel from '../components/carousel'
+import SEO from "../components/seo";
 
 const pageQuery = graphql`
   {
@@ -71,13 +72,11 @@ function IndexPage() {
   return (
     <HomeLayout className='overflow-x-hidden'>
       
-      {/* <SEO
-        keywords={[`freelance`,`music`,`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+      <SEO
+        keywords={[`Taz`, `hair`, `art`, `clothes`]}
         title="Home"
-        image={seoImage}
-        url='https://goosebumps.co.zw/'
-        pathname=""
-      /> */}
+        description="Provision of equipment, spares and engineering services"
+      />
 
       <section className="mb-12 text-center md:flex md:flex-row md:justify-center text-custom-offWhite">
         <div 
