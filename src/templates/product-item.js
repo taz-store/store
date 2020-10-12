@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable */
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from "../components/layout";
@@ -8,7 +8,9 @@ import ShareButtons from '../components/share';
 
 
 
-function ProductPage(props, {data: { gcms: { product },},}) {
+function ProductPage({data: { gcms: { product },}}) {
+const url = typeof window !== 'undefined' ? window.location.href : '';
+console.log(url)
 const sizes = (product.sizes)
 // The logic behind conditional rendering for the sizes input on the form. 
 // The component/function is called down by the form
@@ -36,9 +38,9 @@ function SizeInput() {
   <section className="overflow-hidden text-gray-500 shadow-xl body-font">
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-wrap mx-auto lg:w-4/5">
-      <img alt="ecommerce" className="object-cover object-center w-full h-64 rounded lg:w-1/2 lg:h-auto" src={product.image.node.childImageSharp.fluid.src}/>
+      <img alt={product.name} className="object-cover object-center w-full h-64 rounded lg:w-1/2 lg:h-auto" src={product.image.node.childImageSharp.fluid.src}/>
       {/* this Gatsby-image component one isn't working yet*/}
-      <Img className='inline-block w-56' fluid={product.image.node.childImageSharp.fluid.src} /> 
+      {/* <Img className='inline-block w-56' fluid={product.image.node.childImageSharp.fluid.src} />  */}
       <div className="w-full mt-6 lg:w-1/2 lg:pl-10 lg:py-6 lg:mt-0">
         <h2 className="text-sm tracking-widest text-gray-600 title-font">{product.category.name}</h2>
         <h1 className="mb-1 text-3xl font-medium text-white title-font">{product.name}</h1>
@@ -54,7 +56,9 @@ function SizeInput() {
     </div>
   <div className="flex mx-auto lg:w-4/5">
   </div>
-
+  <div className='my-10'>
+    <ShareButtons url={url} title={product.name}/>
+  </div>
   <form name="ProductItem" data-netlify="true" method='POST' data-netlify-honeypot="bot-field"  className="flex flex-col w-full max-w-md mx-auto mt-8 md:ml-auto md:py-8 md:mt-0">
       <input type="hidden" name="bot-field" />
       <input type="hidden" name="form-name" value="ProductItem" />
@@ -69,7 +73,6 @@ function SizeInput() {
       <SizeInput/>
       <button className="mx-auto btn" type='submit'>Submit</button>
     </form>
-    <ShareButtons url={props.location.href} title={product.name}/>
   </div>
 </section>
 </Layout>
