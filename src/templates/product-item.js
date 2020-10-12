@@ -54,7 +54,7 @@ function SizeInput() {
   <div className="flex mx-auto lg:w-4/5">
   </div>
 
-  <form name="ProductItem" data-netlify="true" method='POST' data-netlify-honeypot="bot-field"  className="flex flex-col w-full mt-8 md:ml-auto md:py-8 md:mt-0">
+  <form name="ProductItem" data-netlify="true" method='POST' data-netlify-honeypot="bot-field"  className="flex flex-col w-full max-w-md mx-auto mt-8 md:ml-auto md:py-8 md:mt-0">
       <input type="hidden" name="bot-field" />
       <input type="hidden" name="form-name" value="ProductItem" />
       <input type="hidden" name="product-name" value={product.name} />
@@ -67,7 +67,6 @@ function SizeInput() {
       <input className="px-4 py-2 mb-4 text-base text-white bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="Address 2" type="text" name="addressTwo"/>
       <SizeInput/>
       <button className="mx-auto btn" type='submit'>Submit</button>
-      <p className="mt-3 text-xs text-gray-500">Chicharrones blog helvetica normcore iceland tousled brook viral artisan.</p>
     </form>
   </div>
 </section>
