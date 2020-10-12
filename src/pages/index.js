@@ -75,7 +75,7 @@ function IndexPage() {
       <SEO
         keywords={[`Taz`, `hair`, `art`, `clothes`]}
         title="Home"
-        description="Provision of equipment, spares and engineering services"
+        description="Featuring a well curated catalogue of products, when it comes to Clothing, Art, & Hair products, we've got you covered."
       />
 
       <section className="mb-12 text-center md:flex md:flex-row md:justify-center text-custom-offWhite">

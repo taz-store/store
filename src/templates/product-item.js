@@ -3,6 +3,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from "../components/layout";
 import Img from '../components/Img'
+import SEO from '../components/seo';
 
 
 
@@ -26,6 +27,11 @@ function SizeInput() {
 
   return(
   <Layout>
+    <SEO
+      title={product.name}
+      description={product.description.text}
+      image={product.image.node.childImageSharp.fluid.src}
+    />
   <section className="overflow-hidden text-gray-500 shadow-xl body-font">
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-wrap mx-auto lg:w-4/5">

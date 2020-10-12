@@ -2,6 +2,7 @@ import { graphql, useStaticQuery, Link  } from 'gatsby';
 import React from 'react'
 import Layout from "../components/layout";
 import Img from 'gatsby-image';
+import SEO from '../components/seo';
 
 const pageQuery = graphql`
   {
@@ -39,6 +40,7 @@ const products = () => {
     console.log(products)
     return (
         <Layout>
+          <SEO/>
           <div className='container px-5 py-24 mx-auto'>
           <div className='flex flex-wrap -m-4'>
             {products.map((product) => (

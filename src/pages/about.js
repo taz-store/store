@@ -1,10 +1,12 @@
 import React from 'react'
 import Layout from "../components/layout";
+import SEO from '../components/seo';
 
 
 const about = () => {
     return (
         <Layout>
+          <SEO/>
             <section className="text-gray-700 body-font">
   <div className="container flex flex-col px-5 py-24 mx-auto ">
     <div className="mx-auto">

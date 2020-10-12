@@ -1,10 +1,12 @@
 import React from 'react'
 import Layout from "../components/layout";
+import SEO from '../components/seo';
 
 
 const contact = () => {
     return (
         <Layout>
+            <SEO/>
             <section className="relative text-gray-700 body-font">
                 <div className="container flex px-5 py-24 mx-auto">
                     <form name="contact" data-netlify="true" method='POST' data-netlify-honeypot="bot-field" className= "relative z-10 flex flex-col w-full p-8 mt-10 rounded-lg md:ml-auto md:mt-0">
