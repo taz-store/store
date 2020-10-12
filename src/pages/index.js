@@ -2,9 +2,6 @@ import React from "react";
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import HomeLayout from "../components/HomeLayout";
-// import SEO from "../components/seo";
-import Hero from "../images/heroVector.svg";
-// import seoImage from '../../static/img/orange.jpg'
 import Carousel from '../components/carousel'
 
 const pageQuery = graphql`
@@ -82,13 +79,13 @@ function IndexPage() {
         pathname=""
       /> */}
 
-      <section className="min-h-screen mb-12 text-center md:flex md:flex-row md:justify-center text-custom-offWhite">
+      <section className="mb-12 text-center md:flex md:flex-row md:justify-center text-custom-offWhite">
         <div 
           id="heroText" 
           className="flex flex-col p-3 text-left md:w-1/3" 
           >
             <h2 
-              className="mb-4 font-bold leading-none "
+              className="z-10 mb-4 font-bold leading-none"
               style={heroHeading}
             >
               {hero.heading}
@@ -96,45 +93,32 @@ function IndexPage() {
             <p className="pr-4 mb-4 text-xl font-bold">
               {hero.description}
             </p>
-            <Link to='/products' className="hidden w-56 px-6 mt-4 md:flex btn">
-              View Products
-            </Link>
         </div>
 
           <div className="relative flex flex-row max-h-screen">
-          {/* this is the mobile button */}
-            <Link to='/products' className="absolute ml-20 md:hidden btn"> 
-              View Products 
-            </Link>
-            <img
-              alt="Cat and human sitting on a couch"
-              className="w-64 mb-8 ml-40 md:w-2/3"
-              src={Hero}
-            />
+              {/* <!-- about us component --> */}
+              <div>
+                  <div className=" lg:py-12 lg:flex lg:justify-center">
+                      <div className="bg-gray-400 rounded-lg lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg">
+                          <div className="p-4 lg:w-1/2">
+                              <Carousel />
+                          </div>
+                          <div className="max-w-xl px-6 py-12 lg:max-w-5xl lg:w-1/2">
+                              <h2 style={heading} className="text-custom-mainBlue"><span className='text-teal-600'>Who we</span> <span className="text-custom-mainBlue">are</span></h2>
+                              <p className="mt-4 text-left text-gray-800">{about.description}</p>
+                              <div className="flex flex-row items-center justify-center mt-8 space-x-3">
+                                  <Link to='/products' className="px-5 py-3 font-semibold text-gray-100 bg-teal-500 rounded">View Products</Link>
+                              </div>
+                          </div>
+                      </div>
+                  </div> 
+              </div>
+              {/* end component */}
           </div>
       </section>
 
-      <section id="about">
-      {/* <!-- component --> */}
-        <div>
-            <div className=" lg:py-12 lg:flex lg:justify-center">
-                <div className="bg-gray-400 rounded-lg lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg">
-                    <div className="p-4 lg:w-1/2">
-                        <Carousel />
-                    </div>
-                    <div className="max-w-xl px-6 py-12 lg:max-w-5xl lg:w-1/2">
-                        <h2 style={heading} className="text-custom-mainBlue"><span className='text-teal-600'>Who we</span> <span className="text-custom-mainBlue">are</span></h2>
-                        <p className="mt-4 text-gray-800">{about.description}</p>
-                        <div className="mt-8">
-                            <Link to='/about' className="px-5 py-3 font-semibold text-gray-100 bg-teal-500 rounded ">About us</Link>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-        </div>
-      </section>
-
-      <section id="products" className='mt-20 text-custom-offWhite'>
+      {/* pt-40 is just for the mobile view, idk why the margin was collapsing on mobile landscape view */}
+      <section id="products" className='pt-40 lg:pt-0 md:mt-20 text-custom-offWhite'>
       <h2 className='pb-20 text-center' style={heading}>OUR PRODUCTS</h2>
       <div id="productCardContainer" className='flex flex-col productCardContainer '>
           {
