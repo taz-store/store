@@ -50,18 +50,18 @@ module.exports = {
       },
     },
     
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `Goosebumps Collective`,
-    //     short_name: `Goosebumps`,
-    //     start_url: `/`,
-    //     background_color: fullConfig.theme.colors.white,
-    //     theme_color: fullConfig.theme.colors.gray["700"],
-    //     display: `minimal-ui`,
-    //     icon: `src/images/tazlogo.svg`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Taz store`,
+        short_name: `Taz store`,
+        start_url: `/`,
+        background_color: fullConfig.theme.colors.white,
+        theme_color: fullConfig.theme.colors.gray["700"],
+        display: `minimal-ui`,
+        icon: `src/images/taz.png`,
+      },
+    },
     // `gatsby-plugin-offline`,
     {
       resolve: "gatsby-plugin-web-font-loader",

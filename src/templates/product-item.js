@@ -4,10 +4,11 @@ import { graphql } from 'gatsby';
 import Layout from "../components/layout";
 import Img from '../components/Img'
 import SEO from '../components/seo';
+import ShareButtons from '../components/share';
 
 
 
-function ProductPage({data: { gcms: { product },},}) {
+function ProductPage(props, {data: { gcms: { product },},}) {
 const sizes = (product.sizes)
 // The logic behind conditional rendering for the sizes input on the form. 
 // The component/function is called down by the form
@@ -68,6 +69,7 @@ function SizeInput() {
       <SizeInput/>
       <button className="mx-auto btn" type='submit'>Submit</button>
     </form>
+    <ShareButtons url={props.location.href} title={product.name}/>
   </div>
 </section>
 </Layout>

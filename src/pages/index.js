@@ -1,9 +1,11 @@
+/* eslint-disable */
 import React from "react";
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import HomeLayout from "../components/HomeLayout";
 import Carousel from '../components/carousel'
 import SEO from "../components/seo";
+import ShareButtons from "../components/share";
 
 const pageQuery = graphql`
   {
@@ -52,7 +54,7 @@ const pageQuery = graphql`
   }
 `;
 
-function IndexPage() {
+function IndexPage(props) {
   const { gcms: { about, categories, hero } } = useStaticQuery(pageQuery);
 
   const heroHeading = {
@@ -145,12 +147,13 @@ function IndexPage() {
         <h1 style={heading} className="mb-2 text-2xl font-bold text-center md:text-3xl">
           Contact Us
         </h1>
-        <p className="inline-block mx-auto font-bold text-center text-gray-200 lg:w-1/3">We&apos;re here to discuss any questions you may have, how can we help?</p>
+        <p className="inline-block mx-auto text-center text-gray-200 lg:w-1/3">We&apos;re here to discuss any questions you may have, how can we help?</p>
         <Link to='/contact' className="px-6 mx-auto mt-12 btn">
               Say Hello
             </Link>
       </div>
     </section>
+    <ShareButtons title='Taz Store' url={props.location.href} twitterHandle='txndai'/>
     </HomeLayout>
   );
 
