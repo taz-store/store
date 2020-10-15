@@ -28,7 +28,7 @@ const about = () => {
           </div>
         </div>
         <div className="pt-4 mt-4 text-center border-t border-gray-300 sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l sm:border-t-0 sm:mt-0 sm:text-left">
-          <p className="mb-4 text-lg leading-relaxed text-custom-offWhite">Meggings portland fingerstache lyft, post-ironic fixie man bun banh mi umami everyday carry hexagon locavore direct trade art party. Locavore small batch listicle gastropub farm-to-table lumbersexual salvia messenger bag. Coloring book flannel truffaut craft beer drinking vinegar sartorial, disrupt fashion axe normcore meh butcher. Portland 90s scenester vexillologist forage post-ironic asymmetrical, chartreuse disrupt butcher paleo intelligentsia pabst before they sold out four loko. 3 wolf moon brooklyn.</p>
+          <p className="mb-4 text-lg leading-relaxed text-custom-offWhite">Taz store is a drop shipping online clothing supplier with the main target of being the one stop shop for clothing retailers in southern Africa. Our products range from T-shirts, shorts, jeans, sweat pants, shoes, caps, bags, hair, art, all coming straight from the factories in China.</p>
         </div>
       </div>
     </div>
