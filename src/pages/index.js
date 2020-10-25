@@ -125,16 +125,20 @@ function IndexPage(props) {
           {
           categories.map((card) => (
             <div className='relative px-6 py-10 mx-auto mt-16 cardContainer md:max-w-3xl md:min-w-2xl' key={card.name}>
-              <div id='imageWrapper' style={productimg} className='absolute top-0 z-0 inline md:flex md:flex-col md:justify-center md:top-auto md:min-h-sm'>
-                <img id='cardImage' className='flex w-48 h-48 mx-auto -mt-16 shadow-xl md:m-0 md:w-56 md:h-56 md:-ml-16 rounded-2xl md:mx-0' src={card.image.node.childImageSharp.fluid.src} alt="" />
-              </div>
+              <Link className='z-20' to={`/products/categories/${card.slug}`}>
+                <div id='imageWrapper' style={productimg} className='absolute top-0 z-0 inline md:flex md:flex-col md:justify-center md:top-auto md:min-h-sm'>
+                    <img id='cardImage' className='flex w-48 h-48 mx-auto -mt-16 shadow-xl teal-shadow md:m-0 md:w-56 md:h-56 md:-ml-16 rounded-2xl md:mx-0' src={card.image.node.childImageSharp.fluid.src} alt="" />
+                </div>
+              </Link>
               <div id='cardText' className='flex flex-col justify-between px-10 pt-32 pb-10 bg-gray-400 teal-shadow rounded-xl min-h-lg md:min-h-sm md:justify-center md:pt-12 md:pl-56 '>
-                <span className='z-50 block teal-shadow'>
-                  <h2 style={heading}><span className='text-teal-600'>{card.name}</span></h2>
+                <span className='z-50 block '>
+                  <Link className='z-20' to={`/products/categories/${card.slug}`}>
+                    <h2 style={heading}><span className='text-teal-600'>{card.name}</span></h2>
+                  </Link>
                   <p className='mb-5 text-lg text-gray-800'>{card.description.text}</p>
                 </span>
-                <Link className='z-20 w-8' to={`/products/categories/${card.slug}`}>
-                    <svg className='inline w-8 text-custom-mainBlue' fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clipRule="evenodd"></path></svg>
+                <Link title={`Link to the ${card.name} category`} className='z-20 w-8' to={`/products/categories/${card.slug}`}>
+                    <svg  className='inline w-8 text-custom-mainBlue' fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clipRule="evenodd"></path></svg>
                 </Link>
               </div>
             </div>
