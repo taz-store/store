@@ -36,20 +36,7 @@ const pageQuery = graphql`
           }
         }
       }
-      productCardIndices {
-        description
-        title
-        image {
-          url
-          node {
-            childImageSharp {
-              fluid {
-                src
-              }
-            }
-          }
-        }
-      }
+      
     }
   }
 `;
